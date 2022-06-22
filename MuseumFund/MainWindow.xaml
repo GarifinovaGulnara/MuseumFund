@@ -1,0 +1,69 @@
+﻿<Window x:Class="MuseumFund.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuseumFund"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Window.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="PasswordBoxStyle1" TargetType="{x:Type PasswordBox}">
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" CornerRadius="10" Background="#D9D9D9" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Добро пожаловать" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="344,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="26"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="344,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="26"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="344,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="25"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="360,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" HorizontalAlignment="Left" Margin="360,310,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="85,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" HorizontalAlignment="Left" Margin="85,166,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
+        <Button Style="{DynamicResource ButtonStyle}" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="354,356,0,0" VerticalAlignment="Top" Height="37" Width="132"/>
+        <Button Style="{DynamicResource ButtonStyle}" Content="Войти" HorizontalAlignment="Left" Margin="113,212,0,0" VerticalAlignment="Top" Height="33" Width="64"/>
+
+    </Grid>
+</Window>
