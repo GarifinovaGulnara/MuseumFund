@@ -51,5 +51,6 @@
         </ListView>
         <Button Style="{DynamicResource ButtonStyle}" Name="SearchBtn" Content="Поиск" HorizontalAlignment="Left" Margin="352,80,0,0" VerticalAlignment="Top" Width="63" Height="30"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="SearchTB" HorizontalAlignment="Left" Margin="295,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddMusItemBtn" Content="Добавить предмет" HorizontalAlignment="Left" Margin="295,130,0,0" VerticalAlignment="Top" Width="120" Height="30"/>
     </Grid>
 </Page>

@@ -20,9 +20,19 @@ namespace MuseumFund.Views
     /// </summary>
     public partial class MusItemsPage : Page
     {
-        public MusItemsPage()
+        public bool IsAdmin;
+        public MusItemsPage(bool id)
         {
+            IsAdmin = id;
             InitializeComponent();
+            if(IsAdmin == false)
+            {
+                AddMusItemBtn.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                AddMusItemBtn.Visibility = Visibility.Visible;
+            }
         }
     }
 }

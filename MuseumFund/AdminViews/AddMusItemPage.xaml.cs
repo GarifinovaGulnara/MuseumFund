@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MuseumFund.Views
+namespace MuseumFund.AdminViews
 {
     /// <summary>
-    /// Логика взаимодействия для MusItemsPage.xaml
+    /// Логика взаимодействия для AddMusItemPage.xaml
     /// </summary>
-    public partial class MusItemsPage : Page
+    public partial class AddMusItemPage : Page
     {
-        public MusItemsPage()
+        public AddMusItemPage()
         {
             InitializeComponent();
         }

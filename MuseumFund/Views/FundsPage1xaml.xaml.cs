@@ -20,9 +20,19 @@ namespace MuseumFund.Views
     /// </summary>
     public partial class FundsPage1xaml : Page
     {
-        public FundsPage1xaml()
+        public bool IsAdmin;
+        public FundsPage1xaml(bool id)
         {
+            IsAdmin = id;
             InitializeComponent();
+            if (IsAdmin == true)
+            {
+                AddFundBtn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddFundBtn.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

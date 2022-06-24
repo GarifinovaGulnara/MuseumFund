@@ -44,7 +44,7 @@ namespace MuseumFund.Windows
             }
             else
             {
-                MessageBox.Show("error");
+                MainFrame.Navigate(new AProfilPage());
             }
         }
 
@@ -52,11 +52,11 @@ namespace MuseumFund.Windows
         {
             if (IsAdmin == false)
             {
-                MainFrame.Navigate(new FundsPage1xaml());
+                MainFrame.Navigate(new FundsPage1xaml(false));
             }
             else
             {
-                MessageBox.Show("error");
+                MainFrame.Navigate(new FundsPage1xaml(true));
             }
         }
 
@@ -64,11 +64,11 @@ namespace MuseumFund.Windows
         {
             if (IsAdmin == false)
             {
-                MainFrame.Navigate(new MusItemsPage());
+                MainFrame.Navigate(new MusItemsPage(false));
             }
             else
             {
-                MessageBox.Show("error");
+                MainFrame.Navigate(new MusItemsPage(true));
             }
         }
     }
