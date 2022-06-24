@@ -16,5 +16,6 @@ namespace MuseumFund
     {
         public static Users user;
         public static MusItems mi;
+        public static Funds fund;
     }
 }
