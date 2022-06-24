@@ -40,14 +40,14 @@ namespace MuseumFund
                 if (App.user.IsAdmin == true)
                 {
                     MessageBox.Show("Приветсвуем, Администратор");
-                    AppWindow mw = new AppWindow(us.IsAdmin);
+                    AppWindow mw = new AppWindow(true);
                     mw.Show();
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Успешный вход");
-                    AppWindow mw = new AppWindow(us.IsAdmin);
+                    AppWindow mw = new AppWindow(false);
                     mw.Show();
                     this.Close();
                 }

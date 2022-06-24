@@ -7,14 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AdminViews\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.16.1" />
     <PackageReference Include="MongoDB.Driver" Version="2.16.1" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.16.1" />
     <PackageReference Include="MongoDB.Driver.GridFS" Version="2.16.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AdminViews\AFundsPagexaml.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdminViews\AMusItemsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="AdminViews\AFundsPagexaml.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminViews\AMusItemsPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

@@ -55,15 +55,15 @@
     </Window.Resources>
     <Grid>
         <Label Content="Добро пожаловать" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" Name="SurnameReg" Text="Фамилия" HorizontalAlignment="Left" Margin="344,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="26"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameReg" Text="Имя" HorizontalAlignment="Left" Margin="344,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="26"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" Name="OrganizationName" Text="Название организации" HorizontalAlignment="Left" Margin="344,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="25"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="SurnameReg" Text="Фамилия" HorizontalAlignment="Left" Margin="344,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="26"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameReg" Text="Имя" HorizontalAlignment="Left" Margin="344,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="26"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="OrganizationName" Text="Название организации" HorizontalAlignment="Left" Margin="344,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="25"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="LoginReg" Text="Логин" HorizontalAlignment="Left" Margin="360,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
         <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" Name="PassReg" Password="Пароль" HorizontalAlignment="Left" Margin="360,310,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="LoginAuth" Text="Логин" HorizontalAlignment="Left" Margin="85,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
         <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" Name="PassAuth" Password="Пароль" HorizontalAlignment="Left" Margin="85,166,0,0" VerticalAlignment="Top" Width="120" Height="25"/>
         <Button Style="{DynamicResource ButtonStyle}" Name="LogUpBtn" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="354,356,0,0" VerticalAlignment="Top" Height="37" Width="132" Click="LogUpBtn_Click"/>
         <Button Style="{DynamicResource ButtonStyle}" Name="LogInBtn" Content="Войти" HorizontalAlignment="Left" Margin="113,212,0,0" VerticalAlignment="Top" Height="33" Width="64" Click="LogInBtn_Click"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" Name="PatronicReg" Text="Отчество" HorizontalAlignment="Left" Margin="344,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" Height="26"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="PatronicReg" Text="Отчество" HorizontalAlignment="Left" Margin="344,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="26"/>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MuseumFund.AdminViews;
+using MuseumFund.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +24,52 @@ namespace MuseumFund.Windows
         public bool IsAdmin;
         public AppWindow(bool id)
         {
-            InitializeComponent();
             IsAdmin = id;
+            InitializeComponent();
+            if (IsAdmin == false)
+            {
+                MainFrame.Navigate(new ProfilPage());
+            }
+            else
+            {
+                MainFrame.Navigate(new AProfilPage());
+            }
+        }
+
+        private void ProfilBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsAdmin == false)
+            {
+                MainFrame.Navigate(new ProfilPage());
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+        }
+
+        private void FundsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsAdmin == false)
+            {
+                MainFrame.Navigate(new FundsPage1xaml());
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+        }
+
+        private void MuseumItemsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsAdmin == false)
+            {
+                MainFrame.Navigate(new MusItemsPage());
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
         }
     }
 }

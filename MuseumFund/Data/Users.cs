@@ -69,7 +69,7 @@ namespace MuseumFund.Data
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
             var data = db.GetCollection<Users>("users");
-            var UpdateDef = Builders<Users>.Update.Set("Name", App.user.Name).Set("Surname", App.user.Surname).Set("Patronic", App.user.Patronic).Set("Phone", App.user.Login).Set("Pass", App.user.Pass);
+            var UpdateDef = Builders<Users>.Update.Set("Name", App.user.Name).Set("Surname", App.user.Surname).Set("Patronic", App.user.Patronic).Set("Login", App.user.Login).Set("Pass", App.user.Pass);
             data.UpdateOne(basa => basa.Id == App.user.Id, UpdateDef);
 
         }
