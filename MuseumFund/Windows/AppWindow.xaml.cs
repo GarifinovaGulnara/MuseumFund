@@ -19,9 +19,11 @@ namespace MuseumFund.Windows
     /// </summary>
     public partial class AppWindow : Window
     {
-        public AppWindow()
+        public bool IsAdmin;
+        public AppWindow(bool id)
         {
             InitializeComponent();
+            IsAdmin = id;
         }
     }
 }
