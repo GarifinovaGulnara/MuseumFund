@@ -11,7 +11,7 @@ namespace MuseumFund.Data
 {
     public class MusItems
     {
-        public MusItems(string name, string dateCreation, bool dateExact, string authors, string description, string fund, string status, string fundcard)
+        public MusItems(string name, string dateCreation, bool dateExact, string authors, string description, string fund, string status, string card)
         {
             Name = name;
             DateCreation = dateCreation;
@@ -20,7 +20,18 @@ namespace MuseumFund.Data
             Description = description;
             Status = status;
             Fund = fund;
-            FundCard = fundcard;
+            Card = card;
+        }
+
+        public MusItems(string name, string dateCreation, bool dateExact, string authors, string description, string fund, string card)
+        {
+            Name = name;
+            DateCreation = dateCreation;
+            DateExact = dateExact;
+            Authors = authors;
+            Description = description;
+            Fund = fund;
+            Card = card;
         }
 
         [BsonId]
@@ -41,7 +52,7 @@ namespace MuseumFund.Data
         [BsonElement]
         public string Fund { get; set; }
         [BsonElement]
-        public string FundCard { get; set; }
+        public string Card { get; set; }
 
 
         public async static void AddMI(MusItems mi)
@@ -73,7 +84,7 @@ namespace MuseumFund.Data
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
             var data = db.GetCollection<MusItems>("musItems");
-            var UpdateDef = Builders<MusItems>.Update.Set("Name", App.mi.Name).Set("DateCreation", App.mi.DateCreation).Set("DateExact", App.mi.DateExact).Set("Authors", App.mi.Authors).Set("Description", App.mi.Description).Set("Status", App.mi.Status).Set("Fund", App.mi.Fund).Set("FundCard", App.mi.FundCard);
+            var UpdateDef = Builders<MusItems>.Update.Set("Name", App.mi.Name).Set("DateCreation", App.mi.DateCreation).Set("DateExact", App.mi.DateExact).Set("Authors", App.mi.Authors).Set("Description", App.mi.Description).Set("Status", App.mi.Status).Set("Fund", App.mi.Fund).Set("Card", App.mi.Card);
             data.UpdateOne(basa => basa.Id == App.mi.Id, UpdateDef);
         }
 

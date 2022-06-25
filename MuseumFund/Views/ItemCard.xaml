@@ -5,10 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MuseumFund.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="440"
       Title="ItemCard">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="EditMIBtn" Content="Редактировать" HorizontalAlignment="Left" Margin="312,360,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="AddMIBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="NameMI" HorizontalAlignment="Left" Margin="34,47,0,0" Text="Название предмета" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="DesMI" HorizontalAlignment="Left" Margin="34,194,0,0" Text="Описание" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="85"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="DateCretionMI" HorizontalAlignment="Left" Margin="34,91,0,0" Text="Дата создания" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="AuthorsMI" HorizontalAlignment="Left" Margin="34,136,0,0" Text="Авторы" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="45"/>
+        <CheckBox x:Name="DateExactMI" Content="Дата точная?" HorizontalAlignment="Left" Margin="190,98,0,0" VerticalAlignment="Top"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" x:Name="FundMI" HorizontalAlignment="Left" Margin="34,290,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" x:Name="CardMI" HorizontalAlignment="Left" Margin="34,332,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
+        <Label Content="Статус движения" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="StatusMI" HorizontalAlignment="Left" Margin="235,44,0,0" VerticalAlignment="Top" Width="171" Height="30"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="StatusCB" HorizontalAlignment="Left" Margin="306,90,0,0" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Page>

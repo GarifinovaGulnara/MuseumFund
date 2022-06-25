@@ -9,14 +9,14 @@
       Title="AddMusItemPage">
 
     <Grid Background="White">
-        <Button Style="{DynamicResource ButtonStyle}" Content="Добавить" HorizontalAlignment="Left" Margin="312,374,0,0" VerticalAlignment="Top" Width="90" Height="37"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="64,47,0,0" Text="Название предмета" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="64,194,0,0" Text="Описание" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="85"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="64,91,0,0" Text="Дата создания" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Margin="64,136,0,0" Text="Авторы" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="45"/>
-        <CheckBox Content="Дата точная?" HorizontalAlignment="Left" Margin="220,98,0,0" VerticalAlignment="Top"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Margin="64,290,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyle}" HorizontalAlignment="Left" Margin="64,332,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="AddMIBtn" Content="Добавить" HorizontalAlignment="Left" Margin="312,360,0,0" VerticalAlignment="Top" Width="90" Height="37" Click="AddMIBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameMI" HorizontalAlignment="Left" Margin="64,47,0,0" Text="Название предмета" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="DesMI" HorizontalAlignment="Left" Margin="64,194,0,0" Text="Описание" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="85"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="DateCretionMI" HorizontalAlignment="Left" Margin="64,91,0,0" Text="Дата создания" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="AuthorsMI" HorizontalAlignment="Left" Margin="64,136,0,0" Text="Авторы" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="45"/>
+        <CheckBox x:Name="DateExactMI" Content="Дата точная?" HorizontalAlignment="Left" Margin="220,98,0,0" VerticalAlignment="Top"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="FundMI" HorizontalAlignment="Left" Margin="64,290,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="CardMI" HorizontalAlignment="Left" Margin="64,332,0,0" VerticalAlignment="Top" Width="134" Height="30"/>
 
     </Grid>
 </Page>

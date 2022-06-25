@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuseumFund.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,12 @@ namespace MuseumFund.Views
             {
                 AddFundBtn.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void AddFundBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddFundWindow afw = new AddFundWindow();
+            afw.Show();
         }
     }
 }

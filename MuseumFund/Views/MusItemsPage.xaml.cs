@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MuseumFund.AdminViews;
+using MuseumFund.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +35,30 @@ namespace MuseumFund.Views
             {
                 AddMusItemBtn.Visibility = Visibility.Visible;
             }
+            GetInfoMIAsync();
+        }
+        public async Task GetInfoMIAsync()
+        {
+            ListMesItems.ItemsSource = await MusItems.GetMI();
+        }
+        public async Task GetSearchList()
+        {
+            ListMesItems.ItemsSource = await MusItems.SearchList(SearchTB.Text);
+        }
+        private void AddMusItemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddMusItemPage());
+        }
+
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GetSearchList();
+        }
+
+        private void ListMesItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var lst = ListMesItems.SelectedItem as MusItems;
+            this.NavigationService.Navigate(new ItemCard(lst, IsAdmin));
         }
     }
 }

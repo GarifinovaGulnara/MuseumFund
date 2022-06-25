@@ -11,7 +11,7 @@
         <ListView 
                  Name="ListMesItems" Margin="0,10,0,0"
                 Background="#EEEDED" BorderBrush="Transparent" 
-                HorizontalContentAlignment="Center" Width="287"
+                HorizontalContentAlignment="Center" SelectionChanged="ListMesItems_SelectionChanged" Width="287"
                 HorizontalAlignment="Left">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -19,38 +19,38 @@
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="30" Color="LightGray" />
                         </Border.Effect>
-                        <Canvas Height="100" Width="350" HorizontalAlignment="Center">
+                        <Canvas Height="100" Width="240" HorizontalAlignment="Center">
                             <TextBlock 
                                 Text="{Binding Name}" 
                                 FontWeight="Bold" 
-                                FontSize="24" 
+                                FontSize="18" 
                                 Margin="10"
-                                Width="300"
+                                Width="200"
                                 TextAlignment="Left" 
                                 Background="Transparent"/>
                             <TextBlock 
                                 Text="{Binding Description}" 
-                                FontSize="12" 
+                                FontSize="10" 
                                 Margin="10,40"
-                                Width="300"
+                                Width="200"
                                 TextAlignment="Left" 
                                 TextWrapping="Wrap"
                                 Background="Transparent"/>
                             <TextBlock 
-                                Text="{Binding Price}" 
+                                Text="{Binding DateCreation}" 
                                 FontWeight="Bold" 
-                                FontSize="18" 
-                                Margin="0,70"
-                                Width="300"
-                                TextAlignment="Center" 
+                                FontSize="10" 
+                                Margin="10,70"
+                                Width="200"
+                                TextAlignment="Left" 
                                 Background="Transparent"/>
                         </Canvas>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Style="{DynamicResource ButtonStyle}" Name="SearchBtn" Content="Поиск" HorizontalAlignment="Left" Margin="352,80,0,0" VerticalAlignment="Top" Width="63" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="SearchBtn" Content="Поиск" HorizontalAlignment="Left" Margin="352,80,0,0" VerticalAlignment="Top" Width="63" Height="30" Click="SearchBtn_Click"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="SearchTB" HorizontalAlignment="Left" Margin="295,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30"/>
-        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddMusItemBtn" Content="Добавить предмет" HorizontalAlignment="Left" Margin="295,130,0,0" VerticalAlignment="Top" Width="120" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddMusItemBtn" Content="Добавить предмет" HorizontalAlignment="Left" Margin="295,130,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="AddMusItemBtn_Click"/>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuseumFund.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,42 @@ namespace MuseumFund.Views
     /// </summary>
     public partial class ItemCard : Page
     {
-        public ItemCard()
+        public bool IsAdmin;
+        public ItemCard(MusItems mi, bool isadmin)
         {
+            App.mi = mi;
+            IsAdmin = isadmin;
             InitializeComponent();
+            if(IsAdmin == false)
+            {
+                EditMIBtn.Visibility = Visibility.Hidden;
+                StatusCB.Visibility = Visibility.Hidden;
+                NameMI.IsEnabled = true;
+                DateCretionMI.IsEnabled = true;
+                DateExactMI.IsEnabled = true;
+                DesMI.IsEnabled = true;
+                FundMI.IsEnabled = true;
+                CardMI.IsEnabled = true;
+            }
+            NameMI.Text = App.mi.Name;
+            DateCretionMI.Text = App.mi.DateCreation;
+            DateExactMI.IsChecked = App.mi.DateExact;
+            AuthorsMI.Text = App.mi.Authors;
+            DesMI.Text = App.mi.Description;
+            FundMI.SelectedItem = App.mi.Fund;
+            CardMI.SelectedItem = App.mi.Card;
+        }
+
+        private void AddMIBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.mi.Name = NameMI.Text;
+            App.mi.DateCreation = DateCretionMI.Text;
+            App.mi.DateExact = DateExactMI.IsChecked.Value;
+            App.mi.Authors = AuthorsMI.Text;
+            App.mi.Description = DesMI.Text;
+            App.mi.Fund = FundMI.Text;
+            App.mi.Card = CardMI.Text;
+            MusItems.EditMI();
         }
     }
 }

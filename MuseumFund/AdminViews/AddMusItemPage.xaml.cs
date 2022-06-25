@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuseumFund.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace MuseumFund.AdminViews
         public AddMusItemPage()
         {
             InitializeComponent();
+        }
+
+        private void AddMIBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (NameMI.Text == " " || DateCretionMI.Text == " " || DateExactMI == null || AuthorsMI.Text == " " || FundMI == null)
+            {
+                MessageBox.Show("error");
+            }
+            else
+            {
+                MusItems mi = new MusItems(NameMI.Text, DateCretionMI.Text, DateExactMI.IsChecked.Value, AuthorsMI.Text, DesMI.Text, FundMI.Text, CardMI.Text);
+                MusItems.AddMI(mi);
+                MessageBox.Show("");
+                NameMI.Text = "Название предмета";
+                DateCretionMI.Text = "Дата создания";
+                DateExactMI.IsChecked = null;
+                AuthorsMI.Text = "Авторы";
+                DesMI.Text = "Описание";
+                FundMI.Text = "";
+                CardMI.Text = "";
+            }
         }
     }
 }

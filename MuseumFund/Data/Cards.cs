@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace MuseumFund.Data
 {
-    public class Funds
+    public class Cards
     {
-        public Funds(string name, string supervisor)
+        public Cards(string name, Funds fund, MusItems mi)
         {
             Name = name;
-            Supervisor = supervisor;
+            Fund = fund;
+            MusItem = mi;
         }
 
         [BsonId]
@@ -22,49 +23,49 @@ namespace MuseumFund.Data
         public ObjectId Id { get; set; }
         [BsonElement]
         public string Name { get; set; }
-
         [BsonElement]
-        public string Supervisor { get; set; }
+        public Funds Fund { get; set; }
+        [BsonElement]
+        public MusItems MusItem { get; set; }
 
-
-        public async static void AddFund(Funds fund)
+        public async static void AddCard(Cards card)
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
-            var collection = db.GetCollection<Funds>("funds");
-            await collection.InsertOneAsync(fund);
+            var collection = db.GetCollection<Cards>("card");
+            await collection.InsertOneAsync(card);
 
         }
 
-        public async static Task<List<Funds>> GetFunds()
+        public async static Task<List<Cards>> GetCards()
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
-            var collection = db.GetCollection<Funds>("funds");
+            var collection = db.GetCollection<Cards>("card");
             return collection.Find(x => true).ToList();
         }
 
-        public static void DeleteFund(Funds fund)
+        public static void DeleteCard(Cards card)
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
-            var collection = db.GetCollection<Funds>("funds");
-            collection.DeleteOne(x => x.Id == fund.Id);
+            var collection = db.GetCollection<Cards>("card");
+            collection.DeleteOne(x => x.Id == card.Id);
         }
-        public static void EditFund()
+        public static void EditCard()
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
-            var data = db.GetCollection<Funds>("funds");
-            var UpdateDef = Builders<Funds>.Update.Set("Name", App.fund.Name).Set("Supervisor", App.fund.Supervisor);
-            data.UpdateOne(basa => basa.Id == App.fund.Id, UpdateDef);
+            var data = db.GetCollection<Cards>("card");
+            var UpdateDef = Builders<Cards>.Update.Set("Name", App.card.Name).Set("Fund", App.card.Fund).Set("MusItem", App.card.MusItem);
+            data.UpdateOne(basa => basa.Id == App.card.Id, UpdateDef);
         }
 
-        public static async Task<List<Funds>> SearchList(string word)
+        public static async Task<List<Cards>> SearchList(string word)
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
-            var collection = db.GetCollection<Funds>("funds");
+            var collection = db.GetCollection<Cards>("card");
             return collection.Find(x => x.Name == word).ToList();
         }
     }
