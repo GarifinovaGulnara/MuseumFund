@@ -47,5 +47,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="AddSupervisorBtn" Style="{DynamicResource ButtonStyle}" Content="Добавить хранителя фонда" HorizontalAlignment="Left" Margin="225,25,0,0" VerticalAlignment="Top" Height="30" Width="165" Click="SaveChangeBtn_Click"/>
     </Grid>
 </Page>

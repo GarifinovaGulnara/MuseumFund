@@ -1,0 +1,14 @@
+﻿<Window x:Class="MuseumFund.Windows.AddSupervisorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuseumFund.Windows"
+        mc:Ignorable="d"
+        Title="AddSupervisorWindow" Height="250" Width="300">
+    <Grid>
+        <Button Style="{DynamicResource ButtonStyle}" Name="AddSupervisorBtn" Content="Добавить" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Width="76" Height="30" Click="AddSupervisorBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameSupervisor" HorizontalAlignment="Left" Margin="34,49,0,0" Text="ФИО хранителя фонда" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="50"/>
+
+    </Grid>
+</Window>

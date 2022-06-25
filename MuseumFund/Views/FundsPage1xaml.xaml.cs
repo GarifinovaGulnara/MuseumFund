@@ -1,4 +1,5 @@
-﻿using MuseumFund.Windows;
+﻿using MuseumFund.Data;
+using MuseumFund.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,12 +35,23 @@ namespace MuseumFund.Views
             {
                 AddFundBtn.Visibility = Visibility.Hidden;
             }
+            GetInfoFundsAsync();
         }
 
         private void AddFundBtn_Click(object sender, RoutedEventArgs e)
         {
             AddFundWindow afw = new AddFundWindow();
             afw.Show();
+        }
+        public async Task GetInfoFundsAsync()
+        {
+            ListFunds.ItemsSource = await Funds.GetFunds();
+        }
+
+        private void ListFunds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var lst = ListFunds.SelectedItem as Funds;
+            this.NavigationService.Navigate(new FundCard(lst));
         }
     }
 }

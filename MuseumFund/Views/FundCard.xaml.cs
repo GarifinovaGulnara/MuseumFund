@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuseumFund.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,9 @@ namespace MuseumFund.Views
     /// </summary>
     public partial class FundCard : Page
     {
-        public FundCard()
+        public FundCard(Funds fund)
         {
+            App.fund = fund;
             InitializeComponent();
         }
     }

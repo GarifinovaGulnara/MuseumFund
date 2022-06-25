@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MuseumFund.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace MuseumFund.AdminViews
         public AProfilPage()
         {
             InitializeComponent();
+        }
+
+        private void SaveChangeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddSupervisorWindow asw = new AddSupervisorWindow();
+            asw.Show();
         }
     }
 }

@@ -50,8 +50,8 @@
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="LogInTB" HorizontalAlignment="Left" Margin="50,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="PassTB" HorizontalAlignment="Left" Margin="50,125,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Запрашиваемые разрешения" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,159,0,0" FontSize="12" VerticalAlignment="Top"/>
-        <Button x:Name="SaveChangeBtn" Style="{DynamicResource ButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="290,79,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="SaveChangeBtn_Click"/>
-        <Button x:Name="EditProfilBtn" Style="{DynamicResource ButtonStyle}" Content="Редактировать" HorizontalAlignment="Left" Margin="290,46,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="EditProfilBtn_Click"/>
+        <Button x:Name="SaveChangeBtn" Style="{DynamicResource ButtonStyle}" Content="Сохранить" HorizontalAlignment="Left" Margin="265,79,0,0" VerticalAlignment="Top" Height="30" Width="70" Click="SaveChangeBtn_Click"/>
+        <Button x:Name="EditProfilBtn" Style="{DynamicResource ButtonStyle}" Content="Редактировать" HorizontalAlignment="Left" Margin="265,43,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="EditProfilBtn_Click"/>
 
     </Grid>
 </Page>

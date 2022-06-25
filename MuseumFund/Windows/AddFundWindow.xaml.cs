@@ -23,6 +23,7 @@ namespace MuseumFund.Windows
         public AddFundWindow()
         {
             InitializeComponent();
+            GetInfo();
         }
 
         private void AddFundBtn_Click(object sender, RoutedEventArgs e)
@@ -37,6 +38,10 @@ namespace MuseumFund.Windows
                 Funds.AddFund(fund);
                 NameFund.Text = "Название фонда";
             }
+        }
+        public async Task GetInfo()
+        {
+            SupervisorFund.ItemsSource = (await Supervisor.GetSupVis()).Select(X => X.FIO).ToList();
         }
     }
 }

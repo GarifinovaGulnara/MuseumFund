@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="AddFundWindow" Height="250" Width="300">
     <Grid>
-        <Button Style="{DynamicResource ButtonStyle}" Name="AddFundBtn" Content="Добавить" HorizontalAlignment="Left" Margin="200,180,0,0" VerticalAlignment="Top" Width="65" Height="30" Click="AddFundBtn_Click"/>
-        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameFund" HorizontalAlignment="Left" Margin="50,37,0,0" Text="Название фонда" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="30"/>
-        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="SupervisorFund" HorizontalAlignment="Left" Margin="50,92,0,0" Text="TextBox" VerticalAlignment="Top" Width="175" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="AddFundBtn" Content="Добавить" HorizontalAlignment="Left" Margin="190,165,0,0" VerticalAlignment="Top" Width="65" Height="30" Click="AddFundBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameFund" HorizontalAlignment="Left" Margin="50,37,0,0" Text="Название фонда" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" Height="30"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="SupervisorFund" HorizontalAlignment="Left" Margin="50,92,0,0" VerticalAlignment="Top" Width="205" Height="30"/>
 
     </Grid>
 </Window>

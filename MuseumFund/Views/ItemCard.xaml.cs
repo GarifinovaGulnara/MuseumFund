@@ -31,12 +31,13 @@ namespace MuseumFund.Views
             {
                 EditMIBtn.Visibility = Visibility.Hidden;
                 StatusCB.Visibility = Visibility.Hidden;
-                NameMI.IsEnabled = true;
-                DateCretionMI.IsEnabled = true;
-                DateExactMI.IsEnabled = true;
-                DesMI.IsEnabled = true;
-                FundMI.IsEnabled = true;
-                CardMI.IsEnabled = true;
+                NameMI.IsEnabled = false;
+                DateCretionMI.IsEnabled = false;
+                DateExactMI.IsEnabled = false;
+                AuthorsMI.IsEnabled = false;
+                DesMI.IsEnabled = false;
+                FundMI.IsEnabled = false;
+                CardMI.IsEnabled = false;
             }
             NameMI.Text = App.mi.Name;
             DateCretionMI.Text = App.mi.DateCreation;
