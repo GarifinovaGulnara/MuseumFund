@@ -11,9 +11,11 @@ namespace MuseumFund.Data
 {
     public class Request
     {
-        public Request(Users user, string addressOrganization, string phone, string fIO, string addressExhibition, string nameExhibition, string dateBegin, string dateEnd)
+        public Request(string user, string namemi, string nameorg, string addressOrganization, string phone, string fIO, string addressExhibition, string nameExhibition, string dateBegin, string dateEnd, string logus)
         {
             this.user = user;
+            NameMi = namemi;
+            NameOrganization = nameorg;
             AddressOrganization = addressOrganization;
             Phone = phone;
             FIO = fIO;
@@ -21,13 +23,18 @@ namespace MuseumFund.Data
             NameExhibition = nameExhibition;
             DateBegin = dateBegin;
             DateEnd = dateEnd;
+            LoginUser = logus;
         }
 
         [BsonId]
         [BsonIgnoreIfDefault]
         public ObjectId id { get; set; }
         [BsonElement]
-        public Users user { get; set; }
+        public string user { get; set; }
+        [BsonElement]
+        public string NameMi { get; set; }
+        [BsonElement]
+        public string NameOrganization { get; set; }
         [BsonElement]
         public string AddressOrganization { get; set; }
         [BsonElement]
@@ -42,6 +49,8 @@ namespace MuseumFund.Data
         public string DateBegin { get; set; }
         [BsonElement]
         public string DateEnd { get; set; }
+        [BsonElement]
+        public string LoginUser { get; set; }
 
         public async static void AddReq(Request request)
         {
@@ -52,6 +61,13 @@ namespace MuseumFund.Data
 
         }
         public async static Task<List<Request>> GetReqs()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("MuseumFund");
+            var collection = db.GetCollection<Request>("request");
+            return collection.Find(x => x.LoginUser == App.user.Login).ToList();
+        }
+        public async static Task<List<Request>> GetAllReqs()
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");

@@ -1,4 +1,5 @@
-﻿using MuseumFund.Windows;
+﻿using MuseumFund.Data;
+using MuseumFund.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,17 @@ namespace MuseumFund.AdminViews
         public AProfilPage()
         {
             InitializeComponent();
+            GetInfoAllReqAsync();
         }
 
         private void SaveChangeBtn_Click(object sender, RoutedEventArgs e)
         {
             AddSupervisorWindow asw = new AddSupervisorWindow();
             asw.Show();
+        }
+        public async Task GetInfoAllReqAsync()
+        {
+            ListRequest.ItemsSource = await Request.GetAllReqs();
         }
     }
 }

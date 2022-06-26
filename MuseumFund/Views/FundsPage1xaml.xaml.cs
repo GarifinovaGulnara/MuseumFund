@@ -51,7 +51,7 @@ namespace MuseumFund.Views
         private void ListFunds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var lst = ListFunds.SelectedItem as Funds;
-            this.NavigationService.Navigate(new FundCard(lst));
+            this.NavigationService.Navigate(new FundCard(lst, IsAdmin));
         }
     }
 }

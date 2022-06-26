@@ -11,11 +11,10 @@ namespace MuseumFund.Data
 {
     public class Cards
     {
-        public Cards(string name, Funds fund, MusItems mi)
+        public Cards(string name, string fund)
         {
             Name = name;
             Fund = fund;
-            MusItem = mi;
         }
 
         [BsonId]
@@ -24,9 +23,7 @@ namespace MuseumFund.Data
         [BsonElement]
         public string Name { get; set; }
         [BsonElement]
-        public Funds Fund { get; set; }
-        [BsonElement]
-        public MusItems MusItem { get; set; }
+        public string Fund { get; set; }
 
         public async static void AddCard(Cards card)
         {
@@ -37,14 +34,21 @@ namespace MuseumFund.Data
 
         }
 
-        public async static Task<List<Cards>> GetCards()
+        public async static Task<List<Cards>> GetCards(string namefund)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("MuseumFund");
+            var collection = db.GetCollection<Cards>("card");
+            return collection.Find(x => x.Fund == namefund).ToList();
+        }
+
+        public async static Task<List<Cards>> GetAllCards()
         {
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
             var collection = db.GetCollection<Cards>("card");
             return collection.Find(x => true).ToList();
         }
-
         public static void DeleteCard(Cards card)
         {
             MongoClient client = new MongoClient();
@@ -57,7 +61,7 @@ namespace MuseumFund.Data
             MongoClient client = new MongoClient();
             var db = client.GetDatabase("MuseumFund");
             var data = db.GetCollection<Cards>("card");
-            var UpdateDef = Builders<Cards>.Update.Set("Name", App.card.Name).Set("Fund", App.card.Fund).Set("MusItem", App.card.MusItem);
+            var UpdateDef = Builders<Cards>.Update.Set("Name", App.card.Name).Set("Fund", App.card.Fund);
             data.UpdateOne(basa => basa.Id == App.card.Id, UpdateDef);
         }
 

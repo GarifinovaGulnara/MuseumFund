@@ -44,20 +44,41 @@ namespace MuseumFund.Views
             DateExactMI.IsChecked = App.mi.DateExact;
             AuthorsMI.Text = App.mi.Authors;
             DesMI.Text = App.mi.Description;
+            StatusMI.Content = App.mi.Status;
             FundMI.SelectedItem = App.mi.Fund;
             CardMI.SelectedItem = App.mi.Card;
+            StatusMI.Content = App.mi.Status;
+            List<string> StatusList = new List<string>() { "прием на хранение", "передача на выставку", "возвращение с выставки", "списание", "в другом фонде", "в своём фонде"};
+            StatusCB.ItemsSource = StatusList;
+            GetCards();
+            GetFunds();
         }
 
-        private void AddMIBtn_Click(object sender, RoutedEventArgs e)
+        private void EditMIBtn_Click(object sender, RoutedEventArgs e)
         {
             App.mi.Name = NameMI.Text;
             App.mi.DateCreation = DateCretionMI.Text;
             App.mi.DateExact = DateExactMI.IsChecked.Value;
             App.mi.Authors = AuthorsMI.Text;
             App.mi.Description = DesMI.Text;
+            App.mi.Status = StatusCB.Text;
             App.mi.Fund = FundMI.Text;
             App.mi.Card = CardMI.Text;
             MusItems.EditMI();
+        }
+
+        private void ApplyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mi = App.mi;
+            this.NavigationService.Navigate(new RequestPage(mi));
+        }
+        public async Task GetFunds()
+        {
+            FundMI.ItemsSource = (await Funds.GetFunds()).Select(x => x.Name).ToList();
+        }
+        public async Task GetCards()
+        {
+            CardMI.ItemsSource = (await Cards.GetAllCards()).Select(x => x.Name).ToList();
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿<Window x:Class="MuseumFund.Windows.AddCardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuseumFund.Windows"
+        mc:Ignorable="d"
+        Title="AddCardWindow" Height="250" Width="300">
+    <Grid>
+        <Button Style="{DynamicResource ButtonStyle}" Name="AddCardBtn" Content="Добавить" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Width="60" Height="26" Click="AddCardBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameCard" HorizontalAlignment="Center" Margin="0,34,0,0" Text="Название картотеки" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="30"/>
+        <ComboBox Style="{DynamicResource ComboBoxStyle}" Name="FundCard" HorizontalAlignment="Center" Margin="0,101,0,0" VerticalAlignment="Top" Width="232" Height="30"/>
+
+    </Grid>
+</Window>

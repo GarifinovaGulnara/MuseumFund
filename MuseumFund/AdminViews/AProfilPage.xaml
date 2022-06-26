@@ -10,42 +10,21 @@
 
     <Grid Background="White">
         <Label Content="Запрашиваемые разрешения" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,60,0,0" FontSize="12" VerticalAlignment="Top"/>
-        <ListView x:Name="ListRequest" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="Transparent" Width="340" Background="#D9D9D9" Margin="0,98,0,10">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border>
-                        <Border.Effect>
-                            <DropShadowEffect BlurRadius="30" Color="LightGray" />
-                        </Border.Effect>
-                        <Canvas>
-                            <TextBlock 
-                                Text="{Binding Name}" 
-                                FontWeight="Bold" 
-                                FontSize="24" 
-                                Margin="10"
-                                Width="300"
-                                TextAlignment="Left" 
-                                Background="Transparent"/>
-                            <TextBlock 
-                                Text="{Binding Description}" 
-                                FontSize="12" 
-                                Margin="10,40"
-                                Width="300"
-                                TextAlignment="Left" 
-                                TextWrapping="Wrap"
-                                Background="Transparent"/>
-                            <TextBlock 
-                                Text="{Binding Price}" 
-                                FontWeight="Bold" 
-                                FontSize="18" 
-                                Margin="0,70"
-                                Width="300"
-                                TextAlignment="Center" 
-                                Background="Transparent"/>
-                        </Canvas>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView x:Name="ListRequest" Width="340" Background="#D9D9D9" Margin="0,98,0,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding user}" Header="Имя пользователя"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameMi}" Header="Название предмета/картотеки"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameOrganization}" Header="Название организации"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding AddressOrganization}" Header="Адресс организации"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Header="Телефон"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FIO}" Header="ФИО контактого лица"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding AddressExhibition}" Header="Адресс выставки"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameExhibition}" Header="Название выставки"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding DateBegin}" Header="Дата начала"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding DateEnd}" Header="Дата окончания"/>
+                </GridView>
+            </ListView.View>
         </ListView>
         <Button x:Name="AddSupervisorBtn" Style="{DynamicResource ButtonStyle}" Content="Добавить хранителя фонда" HorizontalAlignment="Left" Margin="225,25,0,0" VerticalAlignment="Top" Height="30" Width="165" Click="SaveChangeBtn_Click"/>
     </Grid>

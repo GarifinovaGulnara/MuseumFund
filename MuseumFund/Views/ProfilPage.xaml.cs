@@ -29,6 +29,7 @@ namespace MuseumFund.Views
             LogInTB.Text = App.user.Login;
             PassTB.Text = App.user.Pass;
             DataContext = App.user;
+            GetInfoReqAsync();
         }
 
         private void SaveChangeBtn_Click(object sender, RoutedEventArgs e)
@@ -52,6 +53,10 @@ namespace MuseumFund.Views
             LogInTB.IsEnabled = true;
             PassTB.IsEnabled = true;
             SaveChangeBtn.Visibility = Visibility.Visible;
+        }
+        public async Task GetInfoReqAsync()
+        {
+            ListRequest.ItemsSource = await Request.GetReqs();
         }
     }
 }

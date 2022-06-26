@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <ListView 
-                 Name="ListFunds" Margin="0,10,0,0"
+                 Name="ListCards" Margin="0,10,0,0" SelectionChanged="ListCards_SelectionChanged"
                 Background="#EEEDED" BorderBrush="Transparent" 
                 HorizontalContentAlignment="Center" Width="287"
                 HorizontalAlignment="Left">
@@ -30,20 +30,12 @@
                                 TextAlignment="Left" 
                                 Background="Transparent"/>
                             <TextBlock 
-                                Text="{Binding Description}" 
+                                Text="{Binding Fund}" 
                                 FontSize="10" 
                                 Margin="10,40"
                                 Width="200"
                                 TextAlignment="Left" 
                                 TextWrapping="Wrap"
-                                Background="Transparent"/>
-                            <TextBlock 
-                                Text="{Binding DateCreation}" 
-                                FontWeight="Bold" 
-                                FontSize="10" 
-                                Margin="10,70"
-                                Width="200"
-                                TextAlignment="Left" 
                                 Background="Transparent"/>
                         </Canvas>
                     </Border>
@@ -52,6 +44,6 @@
         </ListView>
         <Button Style="{DynamicResource ButtonStyle}" Name="SearchBtn" Content="Поиск" HorizontalAlignment="Left" Margin="364,78,0,0" VerticalAlignment="Top" Width="63" Height="30"/>
         <TextBox Style="{DynamicResource TextBoxStyle}" Name="SearchTB" HorizontalAlignment="Left" Margin="307,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30"/>
-        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddCard" Content="Добавить картотеку" HorizontalAlignment="Left" Margin="307,130,0,0" VerticalAlignment="Top" Width="120" Height="30"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AddCardBtn" Content="Добавить картотеку" HorizontalAlignment="Left" Margin="307,130,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="AddCardBtn_Click"/>
     </Grid>
 </Page>

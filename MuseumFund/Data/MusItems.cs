@@ -71,6 +71,13 @@ namespace MuseumFund.Data
             var collection = db.GetCollection<MusItems>("musItems");
             return collection.Find(x => true).ToList();
         }
+        public async static Task<List<MusItems>> GetMIInCard(string card)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("MuseumFund");
+            var collection = db.GetCollection<MusItems>("musItems");
+            return collection.Find(x => x.Card == card).ToList();
+        }
 
         public static void DeleteMI(MusItems mi)
         {

@@ -1,0 +1,24 @@
+﻿<Page x:Class="MuseumFund.Views.RequestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MuseumFund.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="440"
+      Title="RequestPage">
+
+    <Grid Background="White">
+        <Button Style="{DynamicResource ButtonStyle}" Name="ApplyBtn" Content="Отправить" HorizontalAlignment="Left" Margin="290,350,0,0" VerticalAlignment="Top" Width="90" Height="40" Click="ApplyBtn_Click"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameMI" HorizontalAlignment="Left" Margin="35,45,0,0" Text="Название предмета" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameOrganization" HorizontalAlignment="Left" Margin="35,100,0,0" Text="Название организации" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="AddressOrg" HorizontalAlignment="Left" Margin="35,149,0,0" Text="Адресс организации" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="Phone" HorizontalAlignment="Left" Margin="35,198,0,0" Text="Телефон" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="FIOKonFace" HorizontalAlignment="Left" Margin="35,246,0,0" Text="ФИО контактного лица" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="AddressEx" HorizontalAlignment="Left" Margin="35,297,0,0" Text="Адресс выставки" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="NameEx" HorizontalAlignment="Left" Margin="254,155,0,0" Text="Название выставки" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="DateBegin" HorizontalAlignment="Left" Margin="296,0,0,0" Text="Дата начала" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="30"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="DateEnd" HorizontalAlignment="Left" Margin="296,250,0,0" Text="Дата окончания" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30"/>
+
+    </Grid>
+</Page>
